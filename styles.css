@@ -207,7 +207,7 @@ button {
     z-index: -1;
     content: 'hello';
     position: absolute;
-    top: 10%;
+    top: 6%;
     left: 50%;
     transform: translate(-50%, -1rem);
     color: var(--bg-text-lightpurple);
@@ -242,7 +242,7 @@ button {
     z-index: 0;
     content: 'work';
     position: absolute;
-    top: 6%;
+    top: 4.5%;
     left: 50%;
     transform: translate(-50%, -1rem);
     color: white;
@@ -258,7 +258,7 @@ button {
     width: 0;
     height: 0;
     border-style: solid;
-    border-width: 0 100vw 3vh 0;
+    border-width: 0 105vw 3vh 0;
     border-color: transparent white transparent transparent;
 }
 
@@ -269,7 +269,7 @@ button {
     width: 0;
     height: 0;
     border-style: solid;
-    border-width: 3vh 0 0 100vw;
+    border-width: 3vh 0 0 105vw;
     border-color: transparent transparent transparent white;
 }
 
@@ -278,17 +278,19 @@ button {
     flex-direction: column-reverse;
     align-items: center;
     position: relative;
+    flex-shrink: 1;
 }
 
 
 #case-studies {
-    padding: 12rem 0 4rem 0;
+    padding: 10rem 0 4rem 0;
 }
 
 .case-studies-articles div {
     display: flex;
     flex-direction: column;
     text-align: left;
+    justify-content: center;
     max-width: 350px;
     flex-shrink: 1;
     position: relative;
@@ -321,14 +323,14 @@ button {
 }
 
 .image-wrapper {
-    width: 350px;
+    max-width: 350px;
     flex-grow: 0;
     flex-shrink: 1;
 }
 
 .case-studies-articles a {
     text-transform: uppercase;
-    color: var(--bg-color-blue);
+    color: var(--color-purple);
     font-size: 14px;
     font-weight: bold;
 }
@@ -507,11 +509,11 @@ footer p {
 
     .case-studies-articles div {
         padding: 0;
-        max-width: 19rem;
+        max-width: 350px;
     }
 
     .image-wrapper {
-        width: 33rem;
+        max-width: 800px;
         flex-grow: 0;
         flex-shrink: 1;
     }
