@@ -137,7 +137,6 @@ button {
 
 /* --------------- 4.1 Header ------------------------- */
 .header, .form-outer {
-    background: rgb(72, 69, 228);
     background: linear-gradient(90deg, rgba(72, 69, 228, 1) 15%, rgba(87, 34, 205, 1) 90%);
     position: relative;
     color: white;
@@ -185,6 +184,18 @@ button {
     font-weight: lighter;
 }
 
+/*bonus opdracht - schuine lijn maken: */
+
+/*.header::after{*/
+/*    content: "";*/
+/*    display: block;*/
+/*    width: 0;*/
+/*    height: 0;*/
+/*    border-top: 13px solid transparent;*/
+/*    border-right: 20px solid #D84282;*/
+/*    border-bottom: 13px solid transparent;*/
+/*}*/
+
 /* --------------- 4.2 Introduction ------------------- */
 .introduction {
     padding: 4rem 0;
@@ -203,6 +214,8 @@ button {
 .introduction a {
     color: var(--color-purple);
 }
+
+
 
 
 /* --------------- 4.3 Projects ------------------- */
@@ -379,6 +392,11 @@ footer p {
     /* --------------- 4.1 Header ------------------------- */
     .navigation ul {
        justify-content: flex-end;
+    }
+
+    .navigation > ul > li {
+        padding: 1rem 1rem;
+        font-weight: normal;
     }
 
     .header-title {
