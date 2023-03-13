@@ -1,0 +1,357 @@
+/*////////////////////////
+    Table of Contents
+    1. Global Styles
+    2. Typography
+    3. Layout
+        3.1 Reusables
+        3.2 Other
+    4. Areas
+        4.1 Header
+        4.2 Introduction
+        etc.
+    5. Media Queries
+////////////////////////*/
+
+/* ------------------------------- 1. Global Styles -------------------------------- */
+/*Paars #5722CD;*/
+/*Blauw #4845E4;*/
+/*Roze #ED4385;*/
+/*Zwart #0C0C0C (voor standaard tekst);*/
+/*Lichtpaars #F2F0FF (voor de grote zwevende woorden, zoals "hello" en "services")
+Uitzonderingen:*/
+/*Lichtgrijs #F3F6F9 (voor de achtergrond van de projecten)*/
+/*!*Grijs #7A7A7A (voor de service-tegel tekst); */
+/*font-family: 'Merriweather', serif;*/
+/*font-family: 'Roboto', sans-serif;*/
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /*border: 1px solid indianred;*/
+}
+
+:root {
+    --standard-text-black: #0C0C0C;
+    --bg-text-lightpurple: #F2F0FF;
+    --bg-color-blue: #4845E4;
+    --color-purple: #5722CD;
+    --button-color-pink: #ED4385;
+    --bg-projects-lightgrey: #F3F6F9;
+    --tiles-text-grey: #7A7A7A;
+
+}
+
+/* ------------------------------- 2. Typography ----------------------------------- */
+
+body {
+    font-family: 'Roboto', Arial, sans-serif;
+    text-align: center;
+    font-weight: normal;
+    color: var(--standard-text-black);
+    min-height: 100vh;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Merriweather', Arial, serif;
+    font-weight: normal;
+}
+
+html {
+    font-size: 16px;
+}
+
+
+/* ------------------------------- 3. Layout --------------------------------------- */
+
+/* --------------- 3.1 Reusables ----------------------- */
+
+.outer-container {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+
+.inner-container {
+    display: flex;
+    flex-direction: column;
+    flex: 0 1 1200px;
+    margin-inline: 2rem;
+}
+
+/* --------------- 3.2 Other --------------------------- */
+
+
+a {
+    text-decoration: none;
+}
+
+h1 {
+    font-size: 3.5rem;
+}
+
+h2 {
+    font-size: 2.5rem;
+}
+
+h3 {
+    font-size: 0.93rem;
+}
+
+h4 {
+    font-size: 1.5rem;
+}
+
+h5 {
+    font-size: 1.25rem;
+}
+
+h6 {
+    font-size: 1rem;
+}
+
+p {
+    font-size: 1rem;
+}
+
+button {
+    background-color: var(--button-color-pink);
+    border-radius: 50px;
+    padding: 2.25rem 3.7rem;
+    margin-top: 1rem;
+    color: white;
+    border: none;
+    font-size: 1.25rem;
+    font-weight: lighter;
+    text-transform: uppercase;
+    box-shadow: 0 4px 4px rgba(0, 2, 0, 0.19);
+}
+
+
+/* ------------------------------- 4. Areas ---------------------------------------- */
+
+/* --------------- 4.1 Header ------------------------- */
+.header, .form-outer {
+    background: rgb(72, 69, 228);
+    background: linear-gradient(90deg, rgba(72, 69, 228, 1) 15%, rgba(87, 34, 205, 1) 90%);
+    position: relative;
+    color: white;
+}
+
+.header::before {
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: 0;
+    width: 78px;
+    height: 80px;
+    left: calc(50% - (0.5 * 78px));
+    background-image: url('/assets/squiggle_line_stripe.svg');
+
+}
+
+.navigation ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 3rem 0;
+}
+
+.navigation > ul > li {
+    list-style: none;
+    text-decoration: none;
+    font-size: 2.3rem;
+    font-weight: bold;
+}
+
+.navigation a {
+    color: white;
+}
+
+.header-title {
+    padding: 8rem 0 15rem 0;
+}
+
+.header-title h1, .header-title p {
+    padding: 2rem 1.25rem;
+}
+
+.header-title p {
+    font-size: 1.5rem;
+    font-weight: lighter;
+
+}
+
+/* --------------- 4.2 Introduction ------------------- */
+.introduction {
+    padding: 8rem 0;
+}
+
+.introduction h3 {
+    color: var(--color-purple);
+    padding: 1.25rem 0;
+}
+
+.introduction p {
+    padding-top: 4.375rem;
+    font-size: 0.75rem;
+}
+
+.introduction a {
+    color: var(--color-purple);
+}
+
+
+/* --------------- 4.3 Projects ------------------- */
+
+.case-studies-articles {
+    background-color: var(--bg-projects-lightgrey);
+}
+
+.case-studies-articles article {
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+
+#case-studies {
+    padding: 8rem 0;
+}
+
+.case-studies-articles div {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    max-width: 22rem;
+    flex-shrink: 1;
+    position: relative;
+    padding: 2rem 0;
+
+}
+
+.case-studies-articles h3, .case-studies-articles p {
+    padding: 2rem 0;
+}
+
+.case-studies-articles h3::after {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 57px;
+    height: 6px;
+    bottom: 60%;
+    background-image: url('/assets/squiggle_line.svg');
+}
+
+.case-studies-articles img {
+    width: 100%;
+    box-shadow: 0 15px 15px rgba(0, 0, 0, 0.15);
+}
+
+.image-wrapper {
+    width: 22rem;
+    flex-grow: 0;
+    flex-shrink: 1;
+}
+
+.case-studies-articles a {
+    text-transform: uppercase;
+    color: var(--bg-color-blue);
+    font-size: 14px;
+    font-weight: bold;
+}
+
+
+/* --------------- 4.4 Services ------------------- */
+.services {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 2rem;
+    flex-wrap: wrap;
+    padding: 4rem;
+}
+
+.services > article {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+    padding: 2rem;
+    border: 1px solid var(--bg-color-blue);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+    flex: 1 1 20vw;
+}
+
+.services img {
+
+    width: 3rem;
+    height: 3rem;
+}
+
+.services h4 {
+    color: var(--color-purple);
+    padding: 0.75rem 0 1.25rem 0;
+}
+
+.services p {
+    font-weight: light;
+    color: var(--tiles-text-grey);
+    font-size: 0.9rem;
+}
+
+
+/* --------------- 4.5 Form ------------------- */
+.form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 5rem 0 3rem 0;
+}
+
+.form p {
+    padding: 1.25rem;
+}
+
+.form form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    /*hoe kan ik de width mee laten shrinken? */
+    flex: 1 1 auto;
+    width: 50rem;
+}
+
+.form input, .form textarea {
+    width: 100%;
+    padding: 1rem;
+    margin-bottom: 1.25rem;
+    border-radius: 5px;
+    border: none;
+}
+
+::placeholder {
+    font-family: 'Roboto', Arial, sans-serif;
+    font-size: 0.9rem;
+}
+
+.button-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+}
+
+.button-container button {
+    margin-top: 0.6rem;
+    padding: 1.25rem 4rem;
+    display: flex;
+
+}
+
+
+
+
+
+
