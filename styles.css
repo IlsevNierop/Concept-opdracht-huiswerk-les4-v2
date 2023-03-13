@@ -350,6 +350,85 @@ button {
 
 }
 
+/* --------------- 4.6 Footer ------------------- */
+
+footer {
+    background-color: var(--standard-text-black);
+    color: white;
+    padding: 2.25rem;
+    font-size: 0.75rem;
+}
+
+/* ------------------------------- 5. Media Queries -------------------------------- */
+
+
+@media screen and (min-width: 900px) {
+    /* voor tablets */
+    html {
+        font-size: 18px;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    /* voor desktops en groter */
+    html {
+        font-size: 20px;
+    }
+    /* --------------- 4.1 Header ------------------------- */
+    .navigation ul {
+       justify-content: flex-end;
+    }
+
+    .header-title {
+        padding: 4rem 8rem 8rem 8rem;
+    }
+
+    /* --------------- 4.3 Projects ------------------- */
+
+    .case-studies-articles article {
+        flex-direction: row;
+        justify-content: space-between;
+        flex: 0 1 auto;
+        padding: 2rem 0;
+    }
+
+    .case-studies-articles article:nth-child(even) {
+        flex-direction: row-reverse;
+    }
+
+    .case-studies-articles div {
+        padding: 0;
+        max-width: 19rem;
+    }
+
+    .image-wrapper {
+        width: 33rem;
+        flex-grow: 0;
+        flex-shrink: 1;
+    }
+
+    .case-studies-articles h3::after {
+        bottom: 78%;
+    }
+
+
+    /* --------------- 4.4 Services ------------------- */
+    .services {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        padding: 0;
+    }
+
+    .services > article {
+        flex: 1 1 20vw;
+    }
+
+
+
+
+}
 
 
 
