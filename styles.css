@@ -8,9 +8,13 @@
     4. Areas
         4.1 Header
         4.2 Introduction
-        etc.
-    5. Media Queries
-////////////////////////*/
+        4.3 Projects
+        4.4 Services
+        4.5 Form
+        4.6 Footer
+
+      5. Media Queries */
+
 
 /* ------------------------------- 1. Global Styles -------------------------------- */
 /*Paars #5722CD;*/
@@ -77,7 +81,7 @@ html {
     display: flex;
     flex-direction: column;
     flex: 0 1 1200px;
-    margin-inline: 2rem;
+    margin-inline: 1rem;
 }
 
 /* --------------- 3.2 Other --------------------------- */
@@ -88,23 +92,23 @@ a {
 }
 
 h1 {
-    font-size: 3.5rem;
-}
-
-h2 {
-    font-size: 2.5rem;
-}
-
-h3 {
-    font-size: 0.93rem;
-}
-
-h4 {
     font-size: 1.5rem;
 }
 
+h2 {
+    font-size: 1.5rem;
+}
+
+h3 {
+    font-size: 1rem;
+}
+
+h4 {
+    font-size: 1.4rem;
+}
+
 h5 {
-    font-size: 1.25rem;
+    font-size: 1.2rem;
 }
 
 h6 {
@@ -118,11 +122,11 @@ p {
 button {
     background-color: var(--button-color-pink);
     border-radius: 50px;
-    padding: 2.25rem 3.7rem;
+    padding: 1.2rem 1.4rem;
     margin-top: 1rem;
     color: white;
     border: none;
-    font-size: 1.25rem;
+    font-size: 0.6rem;
     font-weight: lighter;
     text-transform: uppercase;
     box-shadow: 0 4px 4px rgba(0, 2, 0, 0.19);
@@ -155,13 +159,13 @@ button {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    padding: 3rem 0;
+    padding: 1rem 0;
 }
 
 .navigation > ul > li {
     list-style: none;
     text-decoration: none;
-    font-size: 2.3rem;
+    font-size: 0.75rem;
     font-weight: bold;
 }
 
@@ -170,22 +174,20 @@ button {
 }
 
 .header-title {
-    padding: 8rem 0 15rem 0;
+    padding: 4rem 0 10rem 0;
 }
 
 .header-title h1, .header-title p {
-    padding: 2rem 1.25rem;
+    padding: 0.5rem 0;
 }
 
 .header-title p {
-    font-size: 1.5rem;
     font-weight: lighter;
-
 }
 
 /* --------------- 4.2 Introduction ------------------- */
 .introduction {
-    padding: 8rem 0;
+    padding: 4rem 0;
 }
 
 .introduction h3 {
@@ -194,8 +196,8 @@ button {
 }
 
 .introduction p {
-    padding-top: 4.375rem;
-    font-size: 0.75rem;
+    padding-top: 1.25rem;
+    font-size: 1rem;
 }
 
 .introduction a {
@@ -212,35 +214,40 @@ button {
 .case-studies-articles article {
     display: flex;
     flex-direction: column-reverse;
+    align-items: center;
 }
 
 
 #case-studies {
-    padding: 8rem 0;
+    padding: 4rem 0;
 }
 
 .case-studies-articles div {
     display: flex;
     flex-direction: column;
     text-align: left;
-    max-width: 22rem;
+    max-width: 350px;
     flex-shrink: 1;
     position: relative;
     padding: 2rem 0;
 
 }
 
-.case-studies-articles h3, .case-studies-articles p {
-    padding: 2rem 0;
+.case-studies-articles h2 {
+    padding: 0 0 4rem 0;
+}
+.case-studies-articles p {
+    padding: 0 0 2rem 0;
 }
 
-.case-studies-articles h3::after {
+
+.case-studies-articles h2::after {
     content: "";
     display: block;
     position: absolute;
     width: 57px;
     height: 6px;
-    bottom: 60%;
+    bottom: 64%;
     background-image: url('/assets/squiggle_line.svg');
 }
 
@@ -250,7 +257,7 @@ button {
 }
 
 .image-wrapper {
-    width: 22rem;
+    width: 350px;
     flex-grow: 0;
     flex-shrink: 1;
 }
@@ -270,7 +277,7 @@ button {
     justify-content: space-between;
     gap: 2rem;
     flex-wrap: wrap;
-    padding: 4rem;
+    padding: 2rem 0;
 }
 
 .services > article {
@@ -278,10 +285,10 @@ button {
     flex-direction: column;
     align-items: flex-start;
     text-align: left;
-    padding: 2rem;
+    padding: 2.5rem;
     border: 1px solid var(--bg-color-blue);
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
-    flex: 1 1 20vw;
+    flex: 1 1 15rem;
 }
 
 .services img {
@@ -312,15 +319,15 @@ button {
 
 .form p {
     padding: 1.25rem;
+    font-weight: lighter;
 }
 
 .form form {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    /*hoe kan ik de width mee laten shrinken? */
     flex: 1 1 auto;
-    width: 50rem;
+    width: 23rem;
 }
 
 .form input, .form textarea {
@@ -355,22 +362,17 @@ button {
 footer {
     background-color: var(--standard-text-black);
     color: white;
-    padding: 2.25rem;
+    padding: 1.5rem;
+}
+footer p {
     font-size: 0.75rem;
 }
 
 /* ------------------------------- 5. Media Queries -------------------------------- */
 
 
-@media screen and (min-width: 900px) {
-    /* voor tablets */
-    html {
-        font-size: 18px;
-    }
-}
-
-@media screen and (min-width: 1200px) {
-    /* voor desktops en groter */
+@media screen and (min-width: 567px) {
+    /* voor tablets en groter */
     html {
         font-size: 20px;
     }
@@ -410,23 +412,31 @@ footer {
     .case-studies-articles h3::after {
         bottom: 78%;
     }
-
-
     /* --------------- 4.4 Services ------------------- */
     .services {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
         flex-wrap: wrap;
-        padding: 0;
+        padding: 3rem 0;
     }
 
     .services > article {
-        flex: 1 1 20vw;
+        padding: 1.5rem;
     }
 
+    .services h4 {
+       font-size: 1.1rem;
+       }
 
+    .services p {
+        font-size: 0.8rem;
+    }
+    /* --------------- 4.5 Form ------------------- */
+    .form form {
+        width: 40rem;
 
+    }
 
 }
 
