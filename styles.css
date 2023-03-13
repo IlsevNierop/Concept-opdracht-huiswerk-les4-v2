@@ -146,7 +146,7 @@ button {
     content: "";
     display: block;
     position: absolute;
-    bottom: 0;
+    bottom: 1%;
     width: 78px;
     height: 80px;
     left: calc(50% - (0.5 * 78px));
@@ -186,19 +186,34 @@ button {
 
 /*bonus opdracht - schuine lijn maken: */
 
-/*.header::after{*/
-/*    content: "";*/
-/*    display: block;*/
-/*    width: 0;*/
-/*    height: 0;*/
-/*    border-top: 13px solid transparent;*/
-/*    border-right: 20px solid #D84282;*/
-/*    border-bottom: 13px solid transparent;*/
-/*}*/
+.header::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 3vh 0 0 100vw;
+    border-color: transparent transparent transparent white;
+}
 
 /* --------------- 4.2 Introduction ------------------- */
 .introduction {
     padding: 4rem 0;
+    position: relative;
+}
+
+.introduction::before {
+    z-index: -1;
+    content: 'hello';
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translate(-50%, -1rem);
+    color: var(--bg-text-lightpurple);
+    font-weight: bold;
+    font-size: 8rem;
+
 }
 
 .introduction h3 {
@@ -216,23 +231,58 @@ button {
 }
 
 
-
-
 /* --------------- 4.3 Projects ------------------- */
 
 .case-studies-articles {
     background-color: var(--bg-projects-lightgrey);
+    position: relative;
+}
+
+.case-studies-articles::before {
+    z-index: 0;
+    content: 'work';
+    position: absolute;
+    top: 6%;
+    left: 50%;
+    transform: translate(-50%, -1rem);
+    color: white;
+    font-weight: bold;
+    font-size: 8rem;
+
+}
+
+#case-studies::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 100vw 3vh 0;
+    border-color: transparent white transparent transparent;
+}
+
+#case-studies::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 3vh 0 0 100vw;
+    border-color: transparent transparent transparent white;
 }
 
 .case-studies-articles article {
     display: flex;
     flex-direction: column-reverse;
     align-items: center;
+    position: relative;
 }
 
 
 #case-studies {
-    padding: 4rem 0;
+    padding: 12rem 0 4rem 0;
 }
 
 .case-studies-articles div {
@@ -249,6 +299,7 @@ button {
 .case-studies-articles h2 {
     padding: 0 0 4rem 0;
 }
+
 .case-studies-articles p {
     padding: 0 0 2rem 0;
 }
@@ -290,13 +341,33 @@ button {
     justify-content: space-between;
     gap: 2rem;
     flex-wrap: wrap;
-    padding: 2rem 0;
+    padding: 10rem 0 2rem 0;
+    position: relative;
+}
+
+.services-outer-container {
+    position: relative;
+}
+
+.services-outer-container::before{
+    z-index: 0;
+    content: 'services';
+    position: absolute;
+    top: 4.5%;
+    left: 50%;
+    transform: translate(-50%, -1rem);
+    color: var(--bg-text-lightpurple);
+    font-weight: bold;
+    font-size: 6.5rem;
+
+
 }
 
 .services > article {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    background-color: white;
     text-align: left;
     padding: 2.5rem;
     border: 1px solid var(--bg-color-blue);
@@ -328,6 +399,19 @@ button {
     flex-direction: column;
     align-items: center;
     padding: 5rem 0 3rem 0;
+}
+
+
+.form::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 100vw 3vh 0;
+    border-color: transparent white transparent transparent;
+
 }
 
 .form p {
@@ -377,6 +461,7 @@ footer {
     color: white;
     padding: 1.5rem;
 }
+
 footer p {
     font-size: 0.75rem;
 }
@@ -389,9 +474,10 @@ footer p {
     html {
         font-size: 20px;
     }
+
     /* --------------- 4.1 Header ------------------------- */
     .navigation ul {
-       justify-content: flex-end;
+        justify-content: flex-end;
     }
 
     .navigation > ul > li {
@@ -404,7 +490,6 @@ footer p {
     }
 
     /* --------------- 4.3 Projects ------------------- */
-
     .case-studies-articles article {
         flex-direction: row;
         justify-content: space-between;
@@ -414,6 +499,10 @@ footer p {
 
     .case-studies-articles article:nth-child(even) {
         flex-direction: row-reverse;
+
+    }
+ .case-studies-articles span:nth-child(even) {
+     padding: 0 1rem 0 0;
     }
 
     .case-studies-articles div {
@@ -430,6 +519,7 @@ footer p {
     .case-studies-articles h3::after {
         bottom: 78%;
     }
+
     /* --------------- 4.4 Services ------------------- */
     .services {
         display: flex;
@@ -444,12 +534,13 @@ footer p {
     }
 
     .services h4 {
-       font-size: 1.1rem;
-       }
+        font-size: 1.1rem;
+    }
 
     .services p {
         font-size: 0.8rem;
     }
+
     /* --------------- 4.5 Form ------------------- */
     .form form {
         width: 40rem;
