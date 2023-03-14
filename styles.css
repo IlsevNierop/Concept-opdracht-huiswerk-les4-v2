@@ -75,6 +75,7 @@ html {
     display: flex;
     width: 100%;
     justify-content: center;
+    align-items: center;
 }
 
 .inner-container {
@@ -82,6 +83,10 @@ html {
     flex-direction: column;
     flex: 0 1 1200px;
     margin-inline: 1rem;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 1rem;
 }
 
 /* --------------- 3.2 Other --------------------------- */
@@ -193,7 +198,7 @@ button {
     width: 0;
     height: 0;
     border-style: solid;
-    border-width: 3vh 0 0 100vw;
+    border-width: 3vh 0 0 99vw;
     border-color: transparent transparent transparent white;
 }
 
@@ -208,8 +213,7 @@ button {
     content: 'hello';
     position: absolute;
     top: 6%;
-    left: 50%;
-    transform: translate(-50%, -1rem);
+    opacity: 0.8;
     color: var(--bg-text-lightpurple);
     font-weight: bold;
     font-size: 8rem;
@@ -242,9 +246,8 @@ button {
     z-index: 0;
     content: 'work';
     position: absolute;
+    opacity: 0.8;
     top: 4.5%;
-    left: 50%;
-    transform: translate(-50%, -1rem);
     color: white;
     font-weight: bold;
     font-size: 8rem;
@@ -258,7 +261,7 @@ button {
     width: 0;
     height: 0;
     border-style: solid;
-    border-width: 0 105vw 3vh 0;
+    border-width: 0 99vw 3vh 0;
     border-color: transparent white transparent transparent;
 }
 
@@ -269,7 +272,7 @@ button {
     width: 0;
     height: 0;
     border-style: solid;
-    border-width: 3vh 0 0 105vw;
+    border-width: 3vh 0 0 99vw;
     border-color: transparent transparent transparent white;
 }
 
@@ -345,24 +348,24 @@ button {
     flex-wrap: wrap;
     padding: 10rem 0 2rem 0;
     position: relative;
+    align-items: normal;
 }
 
 .services-outer-container {
     position: relative;
 }
 
-.services-outer-container::before{
-    z-index: 0;
+
+
+.services-outer-container::before {
+    z-index: -1;
     content: 'services';
     position: absolute;
+    opacity: 0.8;
     top: 4.5%;
-    left: 50%;
-    transform: translate(-50%, -1rem);
     color: var(--bg-text-lightpurple);
     font-weight: bold;
     font-size: 6.5rem;
-
-
 }
 
 .services > article {
@@ -375,6 +378,7 @@ button {
     border: 1px solid var(--bg-color-blue);
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
     flex: 1 1 15rem;
+
 }
 
 .services img {
@@ -411,7 +415,7 @@ button {
     width: 0;
     height: 0;
     border-style: solid;
-    border-width: 0 100vw 3vh 0;
+    border-width: 0 99vw 3vh 0;
     border-color: transparent white transparent transparent;
 
 }
@@ -426,7 +430,7 @@ button {
     flex-direction: column;
     align-items: flex-start;
     flex: 1 1 auto;
-    width: 23rem;
+    width: 98%;
 }
 
 .form input, .form textarea {
@@ -471,13 +475,17 @@ footer p {
 /* ------------------------------- 5. Media Queries -------------------------------- */
 
 
-@media screen and (min-width: 567px) {
+@media screen and (min-width: 576px) {
     /* voor tablets en groter */
     html {
         font-size: 20px;
     }
 
     /* --------------- 4.1 Header ------------------------- */
+    .navigation {
+        width: 100%;
+    }
+
     .navigation ul {
         justify-content: flex-end;
     }
@@ -503,8 +511,9 @@ footer p {
         flex-direction: row-reverse;
 
     }
- .case-studies-articles span:nth-child(even) {
-     padding: 0 1rem 0 0;
+
+    .case-studies-articles span:nth-child(even) {
+        padding: 0 1rem 0 0;
     }
 
     .case-studies-articles div {
@@ -545,7 +554,7 @@ footer p {
 
     /* --------------- 4.5 Form ------------------- */
     .form form {
-        width: 40rem;
+        width: 70%;
 
     }
 
