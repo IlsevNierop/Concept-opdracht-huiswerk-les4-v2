@@ -158,6 +158,9 @@ button {
     background-image: url('/assets/squiggle_line_stripe.svg');
 
 }
+.navigation {
+    width: 100%;
+}
 
 .navigation ul {
     display: flex;
@@ -198,7 +201,7 @@ button {
     width: 0;
     height: 0;
     border-style: solid;
-    border-width: 3vh 0 0 99vw;
+    border-width: 3vh 0 0 100vw;
     border-color: transparent transparent transparent white;
 }
 
@@ -261,7 +264,7 @@ button {
     width: 0;
     height: 0;
     border-style: solid;
-    border-width: 0 99vw 3vh 0;
+    border-width: 0 100vw 3vh 0;
     border-color: transparent white transparent transparent;
 }
 
@@ -272,7 +275,7 @@ button {
     width: 0;
     height: 0;
     border-style: solid;
-    border-width: 3vh 0 0 99vw;
+    border-width: 3vh 0 0 100vw;
     border-color: transparent transparent transparent white;
 }
 
@@ -357,16 +360,16 @@ button {
 
 
 
-.services-outer-container::before {
-    z-index: -1;
-    content: 'services';
-    position: absolute;
-    opacity: 0.8;
-    top: 4.5%;
-    color: var(--bg-text-lightpurple);
-    font-weight: bold;
-    font-size: 6.5rem;
-}
+/*.services-outer-container::before {*/
+/*    z-index: -1;*/
+/*    content: 'services';*/
+/*    position: absolute;*/
+/*    opacity: 0.8;*/
+/*    top: 4.5%;*/
+/*    color: var(--bg-text-lightpurple);*/
+/*    font-weight: bold;*/
+/*    font-size: 6.5rem;*/
+/*}*/
 
 .services > article {
     display: flex;
@@ -415,7 +418,7 @@ button {
     width: 0;
     height: 0;
     border-style: solid;
-    border-width: 0 99vw 3vh 0;
+    border-width: 0 100vw 3vh 0;
     border-color: transparent white transparent transparent;
 
 }
