@@ -346,6 +346,25 @@ button {
     color: var(--color-purple);
     font-size: 14px;
     font-weight: bold;
+    position: relative;
+}
+
+/*BEGINSTAAT*/
+.case-studies-articles a::after{
+    content: "";
+    display: block;
+    position: absolute;
+    left: 6.5rem;
+    top: 0.45rem;
+    height: 1px;
+    width: 3%;
+    background-color: var(--color-purple);
+    transition: width .35s ease-in-out;
+}
+
+/*EINDSTAAT*/
+.case-studies-articles a:hover::after {
+    width: 15%;
 }
 
 
@@ -559,6 +578,11 @@ footer p {
 
     .case-studies-articles h3::after {
         top: 25%;
+    }
+
+    .case-studies-articles a::after{
+        left: 5.5rem;
+        top: 0.35rem;
     }
 
     /* --------------- 4.4 Services ------------------- */
