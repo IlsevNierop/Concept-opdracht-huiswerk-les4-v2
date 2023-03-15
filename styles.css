@@ -137,6 +137,14 @@ button {
     box-shadow: 0 4px 4px rgba(0, 2, 0, 0.19);
 }
 
+button:hover{
+    cursor: pointer;
+}
+
+button:active{
+    background-color: darkmagenta;
+}
+
 
 /* ------------------------------- 4. Areas ---------------------------------------- */
 
@@ -572,7 +580,7 @@ footer p {
     }
 
     .image-wrapper {
-        flex: 1 1 auto;
+        flex: 0 1 auto;
         max-width: 550px;
     }
 
