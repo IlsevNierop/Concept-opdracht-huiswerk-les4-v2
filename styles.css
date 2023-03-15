@@ -101,7 +101,7 @@ h1 {
 }
 
 h2 {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
 }
 
 h3 {
@@ -109,7 +109,7 @@ h3 {
 }
 
 h4 {
-    font-size: 1.4rem;
+    font-size: 1.2rem;
 }
 
 h5 {
@@ -142,10 +142,12 @@ button {
 
 /* --------------- 4.1 Header ------------------------- */
 .header, .form-outer {
-    background: linear-gradient(90deg, rgba(72, 69, 228, 1) 15%, rgba(87, 34, 205, 1) 90%);
+    /*Kunt meerdere background images op elkaar stapelen, door ze te scheiden met een komma. De eerste komt bovenop.*/
+    background-image: url("/assets/noise-texture.png"), linear-gradient(90deg, rgba(72, 69, 228, 1) 15%, rgba(87, 34, 205, 1) 90%);
     position: relative;
     color: white;
 }
+
 
 .header::before {
     content: "";
@@ -158,6 +160,7 @@ button {
     background-image: url('/assets/squiggle_line_stripe.svg');
 
 }
+
 .navigation {
     width: 100%;
 }
@@ -215,7 +218,7 @@ button {
     z-index: -1;
     content: 'hello';
     position: absolute;
-    top: 6%;
+    top: 0.6rem;
     opacity: 0.8;
     color: var(--bg-text-lightpurple);
     font-weight: bold;
@@ -225,7 +228,7 @@ button {
 
 .introduction h3 {
     color: var(--color-purple);
-    padding: 1.25rem 0;
+    padding: 1.25rem 3rem;
 }
 
 .introduction p {
@@ -246,18 +249,6 @@ button {
 }
 
 .case-studies-articles::before {
-    z-index: 0;
-    content: 'work';
-    position: absolute;
-    opacity: 0.8;
-    top: 4.5%;
-    color: white;
-    font-weight: bold;
-    font-size: 8rem;
-
-}
-
-#case-studies::before {
     content: '';
     position: absolute;
     top: 0;
@@ -268,7 +259,7 @@ button {
     border-color: transparent white transparent transparent;
 }
 
-#case-studies::after {
+.case-studies-articles::after {
     content: '';
     position: absolute;
     bottom: 0;
@@ -279,6 +270,24 @@ button {
     border-color: transparent transparent transparent white;
 }
 
+
+#case-studies::before {
+    z-index: 0;
+    content: 'work';
+    position: absolute;
+    opacity: 0.8;
+    top: 3.4rem;
+    color: white;
+    font-weight: bold;
+    font-size: 8rem;
+
+}
+
+#case-studies {
+    padding: 10rem 0 4rem 0;
+    gap: 3rem;
+}
+
 .case-studies-articles article {
     display: flex;
     flex-direction: column-reverse;
@@ -287,10 +296,6 @@ button {
     flex-shrink: 1;
 }
 
-
-#case-studies {
-    padding: 10rem 0 4rem 0;
-}
 
 .case-studies-articles div {
     display: flex;
@@ -304,22 +309,24 @@ button {
 
 }
 
-.case-studies-articles h2 {
+.case-studies-articles h3 {
     padding: 0 0 4rem 0;
 }
 
 .case-studies-articles p {
     padding: 0 0 2rem 0;
+    font-size: 0.9rem;
+    font-weight: lighter;
 }
 
 
-.case-studies-articles h2::after {
+.case-studies-articles h3::after {
     content: "";
     display: block;
     position: absolute;
     width: 57px;
     height: 6px;
-    bottom: 64%;
+    top: 30%;
     background-image: url('/assets/squiggle_line.svg');
 }
 
@@ -343,33 +350,33 @@ button {
 
 
 /* --------------- 4.4 Services ------------------- */
-.services {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    gap: 2rem;
-    flex-wrap: wrap;
-    padding: 10rem 0 2rem 0;
-    position: relative;
-    align-items: normal;
-}
+
 
 .services-outer-container {
     position: relative;
 }
 
+.services {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    padding: 10rem 0 2rem 0;
+    position: relative;
+    align-items: center;
+}
 
-
-/*.services-outer-container::before {*/
-/*    z-index: -1;*/
-/*    content: 'services';*/
-/*    position: absolute;*/
-/*    opacity: 0.8;*/
-/*    top: 4.5%;*/
-/*    color: var(--bg-text-lightpurple);*/
-/*    font-weight: bold;*/
-/*    font-size: 6.5rem;*/
-/*}*/
+.services::before {
+    z-index: -1;
+    content: 'services';
+    position: absolute;
+    opacity: 0.8;
+    top: 4.5%;
+    color: var(--bg-text-lightpurple);
+    font-weight: bold;
+    font-size: 5.25rem;
+}
 
 .services > article {
     display: flex;
@@ -377,10 +384,11 @@ button {
     align-items: flex-start;
     background-color: white;
     text-align: left;
-    padding: 2.5rem;
+    padding: 20px;
     border: 1px solid var(--bg-color-blue);
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
-    flex: 1 1 15rem;
+    flex: 0 16.5rem;
+    max-width: 16.5rem;
 
 }
 
@@ -396,9 +404,9 @@ button {
 }
 
 .services p {
-    font-weight: light;
+    font-weight: lighter;
     color: var(--tiles-text-grey);
-    font-size: 0.9rem;
+    font-size: 0.75rem;
 }
 
 
@@ -484,6 +492,10 @@ footer p {
         font-size: 20px;
     }
 
+    .inner-container {
+        margin-inline: 2rem;
+    }
+
     /* --------------- 4.1 Header ------------------------- */
     .navigation {
         width: 100%;
@@ -502,12 +514,31 @@ footer p {
         padding: 4rem 8rem 8rem 8rem;
     }
 
+    /* --------------- 4.1 Introduction ------------------- */
+    .introduction::before {
+        top: 3rem;
+        font-size: 16rem;
+    }
+
+
     /* --------------- 4.3 Projects ------------------- */
     .case-studies-articles article {
         flex-direction: row;
         justify-content: space-between;
+        gap: 3rem;
         flex: 0 1 auto;
-        padding: 2rem 0;
+    }
+
+    #case-studies {
+        justify-content: space-between;
+        align-items: center;
+    }
+
+
+    #case-studies::before {
+        top: 0;
+        font-size: 16rem;
+
     }
 
     .case-studies-articles article:nth-child(even) {
@@ -515,44 +546,40 @@ footer p {
 
     }
 
-    .case-studies-articles span:nth-child(even) {
-        padding: 0 1rem 0 0;
-    }
-
     .case-studies-articles div {
         padding: 0;
-        max-width: 350px;
+        flex-shrink: 1;
+        flex-basis: auto;
     }
 
     .image-wrapper {
-        max-width: 800px;
-        flex-grow: 0;
-        flex-shrink: 1;
+        flex: 1 1 auto;
+        max-width: 550px;
     }
 
     .case-studies-articles h3::after {
-        bottom: 78%;
+        top: 25%;
     }
 
     /* --------------- 4.4 Services ------------------- */
     .services {
         display: flex;
         flex-direction: row;
-        justify-content: space-between;
+        justify-content: center;
         flex-wrap: wrap;
-        padding: 3rem 0;
+        padding: 10rem 0 3rem 0;
+        /*Align items spreekt hier over row - dus over de hoogte van de tegels - als hier center staat (wat bij mobiel het geval is, maar dan gaat het over column, dus over gecenterd over row) - dan krijgen de tegels verschillende hoogtes. */
+        align-items: normal;
     }
 
-    .services > article {
-        padding: 1.5rem;
+    .services::before {
+        top: 0;
+        font-size: 12rem;
     }
+
 
     .services h4 {
         font-size: 1.1rem;
-    }
-
-    .services p {
-        font-size: 0.8rem;
     }
 
     /* --------------- 4.5 Form ------------------- */
