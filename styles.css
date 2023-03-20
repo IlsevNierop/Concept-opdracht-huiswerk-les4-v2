@@ -1,0 +1,628 @@
+/*////////////////////////
+    Table of Contents
+    1. Global Styles
+    2. Typography
+    3. Layout
+        3.1 Reusables
+        3.2 Other
+    4. Areas
+        4.1 Header
+        4.2 Introduction
+        4.3 Projects
+        4.4 Services
+        4.5 Form
+        4.6 Footer
+
+      5. Media Queries */
+
+
+/* ------------------------------- 1. Global Styles -------------------------------- */
+/*Paars #5722CD;*/
+/*Blauw #4845E4;*/
+/*Roze #ED4385;*/
+/*Zwart #0C0C0C (voor standaard tekst);*/
+/*Lichtpaars #F2F0FF (voor de grote zwevende woorden, zoals "hello" en "services")
+Uitzonderingen:*/
+/*Lichtgrijs #F3F6F9 (voor de achtergrond van de projecten)*/
+/*!*Grijs #7A7A7A (voor de service-tegel tekst); */
+/*font-family: 'Merriweather', serif;*/
+/*font-family: 'Roboto', sans-serif;*/
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /*border: 1px solid indianred;*/
+}
+
+:root {
+    --standard-text-black: #0C0C0C;
+    --bg-text-lightpurple: #F2F0FF;
+    --bg-color-blue: #4845E4;
+    --color-purple: #5722CD;
+    --button-color-pink: #ED4385;
+    --bg-projects-lightgrey: #F3F6F9;
+    --tiles-text-grey: #7A7A7A;
+
+}
+
+/* ------------------------------- 2. Typography ----------------------------------- */
+
+body {
+    font-family: 'Roboto', Arial, sans-serif;
+    text-align: center;
+    font-weight: normal;
+    color: var(--standard-text-black);
+    min-height: 100vh;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Merriweather', Arial, serif;
+    font-weight: normal;
+}
+
+html {
+    font-size: 16px;
+}
+
+
+/* ------------------------------- 3. Layout --------------------------------------- */
+
+/* --------------- 3.1 Reusables ----------------------- */
+
+.outer-container {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.inner-container {
+    display: flex;
+    flex-direction: column;
+    flex: 0 1 1200px;
+    margin-inline: 1rem;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 1rem;
+}
+
+/* --------------- 3.2 Other --------------------------- */
+
+
+a {
+    text-decoration: none;
+}
+
+h1 {
+    font-size: 1.5rem;
+}
+
+h2 {
+    font-size: 1.3rem;
+}
+
+h3 {
+    font-size: 1rem;
+}
+
+h4 {
+    font-size: 1.2rem;
+}
+
+h5 {
+    font-size: 1.2rem;
+}
+
+h6 {
+    font-size: 1rem;
+}
+
+p {
+    font-size: 1rem;
+}
+
+button {
+    background-color: var(--button-color-pink);
+    border-radius: 50px;
+    padding: 1.25rem 1.5rem;
+    margin-top: 1rem;
+    color: white;
+    border: none;
+    font-size: 0.6rem;
+    font-weight: lighter;
+    text-transform: uppercase;
+    box-shadow: 0 4px 4px rgba(0, 2, 0, 0.19);
+}
+
+button:hover{
+    cursor: pointer;
+}
+
+button:active{
+    background-color: darkmagenta;
+}
+
+
+/* ------------------------------- 4. Areas ---------------------------------------- */
+
+/* --------------- 4.1 Header ------------------------- */
+.header, .form-outer {
+    /*Kunt meerdere background images op elkaar stapelen, door ze te scheiden met een komma. De eerste komt bovenop.*/
+    background-image: url("/assets/noise-texture.png"), linear-gradient(90deg, rgba(72, 69, 228, 1) 15%, rgba(87, 34, 205, 1) 90%);
+    position: relative;
+    color: white;
+}
+
+
+.header::before {
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: 1%;
+    width: 78px;
+    height: 80px;
+    left: calc(50% - (0.5 * 78px));
+    background-image: url('/assets/squiggle_line_stripe.svg');
+
+}
+
+.navigation {
+    width: 100%;
+}
+
+.navigation ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 1rem 0;
+}
+
+.navigation > ul > li {
+    list-style: none;
+    text-decoration: none;
+    font-size: 0.75rem;
+    font-weight: bold;
+}
+
+.navigation a {
+    color: white;
+}
+
+.header-title {
+    padding: 4rem 0 10rem 0;
+}
+
+.header-title h1, .header-title p {
+    padding: 0.5rem 0;
+}
+
+.header-title p {
+    font-weight: lighter;
+}
+
+/*bonus opdracht - schuine lijn maken: */
+
+.header::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 3vh 0 0 100vw;
+    border-color: transparent transparent transparent white;
+}
+
+/* --------------- 4.2 Introduction ------------------- */
+.introduction {
+    padding: 4rem 0;
+    position: relative;
+}
+
+.introduction::before {
+    z-index: -1;
+    content: 'hello';
+    position: absolute;
+    top: 0.6rem;
+    opacity: 0.8;
+    color: var(--bg-text-lightpurple);
+    font-weight: bold;
+    font-size: 8rem;
+
+}
+
+.introduction h3 {
+    color: var(--color-purple);
+    padding: 1.25rem 3rem;
+}
+
+.introduction p {
+    padding-top: 1.25rem;
+    font-size: 1rem;
+}
+
+.introduction a {
+    color: var(--color-purple);
+}
+
+
+/* --------------- 4.3 Projects ------------------- */
+
+.case-studies-articles {
+    background-color: var(--bg-projects-lightgrey);
+    position: relative;
+}
+
+.case-studies-articles::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 100vw 3vh 0;
+    border-color: transparent white transparent transparent;
+}
+
+.case-studies-articles::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 3vh 0 0 100vw;
+    border-color: transparent transparent transparent white;
+}
+
+
+#case-studies::before {
+    z-index: 0;
+    content: 'work';
+    position: absolute;
+    opacity: 0.8;
+    top: 3.4rem;
+    color: white;
+    font-weight: bold;
+    font-size: 8rem;
+
+}
+
+#case-studies {
+    padding: 10rem 0 4rem 0;
+    gap: 3rem;
+}
+
+.case-studies-articles article {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    position: relative;
+    flex-shrink: 1;
+}
+
+
+.case-studies-articles div {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    justify-content: center;
+    max-width: 350px;
+    flex-shrink: 1;
+    position: relative;
+    padding: 2rem 0;
+
+}
+
+.case-studies-articles h3 {
+    padding: 0 0 4rem 0;
+}
+
+.case-studies-articles p {
+    padding: 0 0 2rem 0;
+    font-size: 0.9rem;
+    font-weight: lighter;
+}
+
+
+.case-studies-articles h3::after {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 57px;
+    height: 6px;
+    top: 30%;
+    background-image: url('/assets/squiggle_line.svg');
+}
+
+.case-studies-articles img {
+    width: 100%;
+    box-shadow: 0 15px 15px rgba(0, 0, 0, 0.15);
+}
+
+.image-wrapper {
+    max-width: 350px;
+    flex-grow: 0;
+    flex-shrink: 1;
+}
+
+.case-studies-articles a {
+    text-transform: uppercase;
+    color: var(--color-purple);
+    font-size: 0.7rem;
+    font-weight: bold;
+    position: relative;
+}
+
+/*BEGINSTAAT*/
+.case-studies-articles a::after{
+    content: "";
+    display: block;
+    position: absolute;
+    left: 6.5rem;
+    top: 0.45rem;
+    height: 1px;
+    width: 3%;
+    background-color: var(--color-purple);
+    transition: width .35s ease-in-out;
+}
+
+/*EINDSTAAT*/
+.case-studies-articles a:hover::after {
+    width: 15%;
+}
+
+
+/* --------------- 4.4 Services ------------------- */
+
+
+.services-outer-container {
+    position: relative;
+}
+
+.services {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    padding: 10rem 0 2rem 0;
+    position: relative;
+    align-items: center;
+}
+
+.services::before {
+    z-index: -1;
+    content: 'services';
+    position: absolute;
+    opacity: 0.8;
+    top: 4.5%;
+    color: var(--bg-text-lightpurple);
+    font-weight: bold;
+    font-size: 5.25rem;
+}
+
+.services > article {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    background-color: white;
+    text-align: left;
+    padding: 20px;
+    border: 1px solid var(--bg-color-blue);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+    flex: 0 16.5rem;
+    max-width: 16.5rem;
+
+}
+
+.services img {
+
+    width: 3rem;
+    height: 3rem;
+}
+
+.services h4 {
+    color: var(--color-purple);
+    padding: 0.75rem 0 1.25rem 0;
+}
+
+.services p {
+    font-weight: lighter;
+    color: var(--tiles-text-grey);
+    font-size: 0.75rem;
+}
+
+
+/* --------------- 4.5 Form ------------------- */
+.form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 5rem 0 3rem 0;
+}
+
+
+.form::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 100vw 3vh 0;
+    border-color: transparent white transparent transparent;
+
+}
+
+.form p {
+    padding: 1.25rem;
+    font-weight: lighter;
+}
+
+.form form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    flex: 1 1 auto;
+    width: 98%;
+}
+
+.form input, .form textarea {
+    width: 100%;
+    padding: 1rem;
+    margin-bottom: 1.25rem;
+    border-radius: 5px;
+    border: none;
+}
+
+::placeholder {
+    font-family: 'Roboto', Arial, sans-serif;
+    font-size: 0.9rem;
+}
+
+.button-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+}
+
+.button-container button {
+    margin-top: 0.6rem;
+    padding: 1.25rem 4rem;
+    display: flex;
+
+}
+
+/* --------------- 4.6 Footer ------------------- */
+
+footer {
+    background-color: var(--standard-text-black);
+    color: white;
+    padding: 1.5rem;
+}
+
+footer p {
+    font-size: 0.75rem;
+}
+
+/* ------------------------------- 5. Media Queries -------------------------------- */
+
+
+@media screen and (min-width: 576px) {
+    /* voor tablets en groter */
+    html {
+        font-size: 20px;
+    }
+
+    .inner-container {
+        margin-inline: 2rem;
+    }
+
+    /* --------------- 4.1 Header ------------------------- */
+    .navigation {
+        width: 100%;
+    }
+
+    .navigation ul {
+        justify-content: flex-end;
+    }
+
+    .navigation > ul > li {
+        padding: 1rem 1rem;
+        font-weight: normal;
+    }
+
+    .header-title {
+        padding: 4rem 8rem 8rem 8rem;
+    }
+
+    /* --------------- 4.1 Introduction ------------------- */
+    .introduction::before {
+        top: 3rem;
+        font-size: 16rem;
+    }
+
+
+    /* --------------- 4.3 Projects ------------------- */
+    .case-studies-articles article {
+        flex-direction: row;
+        justify-content: space-between;
+        gap: 3rem;
+        flex: 0 1 auto;
+    }
+
+    #case-studies {
+        justify-content: space-between;
+        align-items: center;
+    }
+
+
+    #case-studies::before {
+        top: 0;
+        font-size: 16rem;
+
+    }
+
+    .case-studies-articles article:nth-child(even) {
+        flex-direction: row-reverse;
+
+    }
+
+    .case-studies-articles div {
+        padding: 0;
+        flex-shrink: 1;
+        flex-basis: auto;
+    }
+
+    .image-wrapper {
+        flex: 0 1 auto;
+        max-width: 550px;
+    }
+
+    .case-studies-articles h3::after {
+        top: 25%;
+    }
+
+    .case-studies-articles a::after{
+        left: 5.5rem;
+        top: 0.35rem;
+    }
+
+    /* --------------- 4.4 Services ------------------- */
+    .services {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: wrap;
+        padding: 10rem 0 3rem 0;
+        /*Align items spreekt hier over row - dus over de hoogte van de tegels - als hier center staat (wat bij mobiel het geval is, maar dan gaat het over column, dus over gecenterd over row) - dan krijgen de tegels verschillende hoogtes. */
+        align-items: normal;
+    }
+
+    .services::before {
+        top: 0;
+        font-size: 12rem;
+    }
+
+
+    .services h4 {
+        font-size: 1rem;
+    }
+
+    /* --------------- 4.5 Form ------------------- */
+    .form form {
+        width: 70%;
+
+    }
+
+}
+
+
+
+
+
